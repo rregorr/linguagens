@@ -4,7 +4,7 @@ idade = 20
 estudante = False
 
 # criar e operar em listas - uma lista tem métodos de alteração, como adicionar/remover itens.
-gostos = ["Rock", "MPB", "Classic"]
+gostos = ["Rock", "MPB", "Classic", "Valsa", "Tango", "House"]
 print('A lista foi criada. Ela está assim:\n {}'.format(gostos), '\n')
 
 gostos.append("Forro") #insere item na última posicao da lista
@@ -36,6 +36,30 @@ print('Foi criado o dicionario bens. O dicionário está assim:\n {}'.format(ben
 print("Acessando o primeiro item do dicionário bens:  {}".format(bens["carro"][0]),'\n')
 print("Acessando elementos aninhado do dicionário bens:  {}".format(bens["casa"][2]["bairro"][2]["profissao"][1]),'\n')
 
-print("Agora vamos iterar na lista gostos:\n")
+print("Agora vamos iterar na lista gostos. Os gostos agora, são:")
+#for
 for gosto in gostos:
-    print(f'Os gostos, são:\n {gosto}')
+    print(f'{gosto}')
+
+#if
+if (nome == "Josias Soza"):
+    print("Seu nome é {}".format(nome))
+else:
+    print("Seu nome não é {}".format(nome))
+
+#while
+while(idade <= 18):
+    print(f"Vc tem menos de 18 anos, e não pode beber.")
+    idade += 1
+
+#do while não existe em python, mas o mesmo efeito é conseguido com while-if
+
+#fatiamentos de lista - incluir números negativos
+print("\n--------Trabalhando com fatiamentos:--------\n")
+print("Os primeiros 3 elementos da lista, são: {}".format(gostos[0:3]))
+print(f"Os elementos do 2o ao 5o elemento da lista, são: {gostos[1:4]}")
+
+#fatiar dicionario
+
+
+
