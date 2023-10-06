@@ -58,8 +58,13 @@ while(idade <= 18):
 print("\n--------Trabalhando com fatiamentos:--------\n")
 print("Os primeiros 3 elementos da lista, são: {}".format(gostos[0:3]))
 print(f"Os elementos do 2o ao 5o elemento da lista, são: {gostos[1:4]}")
+print(f"Os elementos entre o 4o ao 1o da lista, de 1 em 1, são: {gostos[-1:-5:-2]}")
+print(f"Os elementos do ultimo ao 1o, de 2 em 2, da lista, são: {gostos[::-2]}")
+print(f"Os elementos do 1o ao último, de 3 em 3, da lista, são: {gostos[::3]}","\n")
 
 #fatiar dicionario
+print(f"O 2o elemento do dicionário bens, é {bens['casa']}")
+print(f"Pegar o elemento zebuc: {bens['casa'][2]['bairro'][2]['profissao'][1]}")
 
 
-
+#1a atividade Python OK
