@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atributos Globais HTML</title>
+  <style>
+    .botao {
+      border: none;
+      background-color: rgb(255, 223, 196);
+      border-radius: 5px;
+      padding: 10px 25px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      text-decoration: none;
+      color: black;
+    }
+      #box-1 {
+        width: 150px;
+        height: 150px;
+        background-color: darkorchid;
+      }
+      #box-2 {
+        width: 150px;
+        height: 150px;
+        background-color: darkorange;
+      }
+ </style>
+</head>
+<body>
+  <p>1. Atributo Global Class</p>
+  <button type="button" accesskey="s" class="botao">Salvar</button>
+  <button type="button" accesskey="r"class="botao">Retornar</button>
+
+  <p>2. Atributo Global ContentEditable</p>
+  <p contenteditable="True"><h3>Esse conteudo pode ser editado</h3></p>
+
+  <p>3. Atributo Global Data-*</p>
+  <p>4. Atributo Global dir</p>
+  <p>5. Atributo Global draggable</p>
+  <p>6. Atributo Global dropzone</p>
+  <p>7. Atributo Global hidden</p>
+  <div>Heitor</div>
+  <div hidden>Java</div>
+
+  <p>8. Atributo Global id</p>
+  <div id="box-1"></div>
+  <div id="box-2"></div>
+
+  <p>9. Atributo Global lang</p>
+  <!--Util para motores de busca, pronuncia correta-->
+  <h6 lang="ar">Ola, Mundô!</h6>
+
+  <p>10. Atributo Global spellcheck</p>
+  <!--Verifica ortografia do que é inserido pelo usuario-->
+
+  <p>11. Atributo Global style</p>
+  <!--CSS direto na tag-->
+  <p style="color: brown;">Mudando a cor direito na tag</p>
+
+  <p>12. Atributo Global style</p>
+
+  <p>13. Atributo Global style</p>
+
+  <p>14. Atributo Global style</p>
+
+  <p>15. Atributo Global style</p>
+
+  <p>16. Atributo Global style</p>
+
+  <p>17. Atributo Global style</p>
+
+  <p>18. Atributo Global style</p>
+
+  <p>11. Atributo Global style</p>
+
+
+</body>
+<script>
+  <!--Duas formas de pegar o id: getElementById basta pegar o id direto; querySelector precisa da #-->
+  const box1 = document.getElementById('box-1');
+  console.log(box1);
+  const box2 = document.querySelector('#box-2');
+  console.log(box2);
+</script>
+</html>
