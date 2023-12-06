@@ -33,6 +33,6 @@ while (contador <= numero) {
 /* https://wagnergaspar.com/exercicio-5-imprimir-o-enesimo-termo-da-sequencia-de-fibonacci-com-fluxograma/
 1 - a = 0; b = 1; c = a + b (0+1=1); 
 
-a = b; b = c;
+a = b; b = c;;;
 
 */
