@@ -2,7 +2,8 @@ package src.main.java;
 import java.util.Scanner;
 
 public class Fibonacci {
-  public static long CalculaFibonacci(int n) {
+  //public static long CalculaFibonacci(int n) {
+
     
     long cont = 0;
     long a = 0;
@@ -13,7 +14,7 @@ public class Fibonacci {
 	System.out.println("A sequência Fibonacci não admite números negativos");
     }	
 
-    if (n == 0) {
+    else if (n == 0) {
         System.out.println("A sequência Fibonacci para o número " + n + " é: 0");
     }
 
