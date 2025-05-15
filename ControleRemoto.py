@@ -3,7 +3,7 @@ class ControleRemoto:
     def __init__(self, cor):
         self.cor = cor
 
-controle_remoto = ControleRemoto("preto")
+controle_remoto = ControleRemoto("preto");;;
 
 controle_remoto2 = ControleRemoto("cinza")
 
