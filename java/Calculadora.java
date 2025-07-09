@@ -1,71 +1,64 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Calculadora {
-    public int somar(int a, int b) {
-        return a + b; // Retorna a soma dos parâmetros a e b. O valor será usado por quem chamar esse
-                      // método
+    Scanner sc = new Scanner(System.in);
+    ArrayList<Integer> armazenaNumeros = new ArrayList<>();
+
+    public int somar(int num1, int num2, int num3) {
+        System.out.println("Digite o primeiro número:");
+        num1 = sc.nextInt();
+        System.out.println("Digite o segundo número:");
+        num2 = sc.nextInt();
+        System.out.println("Digite o terceiro número:");
+        num3 = sc.nextInt();
+
+        int soma = num1 + num2 + num3;
+        armazenaNumeros.add(num1);
+        armazenaNumeros.add(num2);
+        armazenaNumeros.add(num3);
+        return soma;
+    }
+    //Método que remove o número do topo da lista
+    public int removerTopo() {
+        return armazenaNumeros.remove(armazenaNumeros.size()-1);
     }
 
-    public int subtrair(int a, int b) {
-        return a - b;
+    //Método que remove o número correspondente ao indice informado da lista
+    public int removerIndice(int indice) {
+        System.out.println("Informe o índice do número a remover:");
+        int leIndice = sc.nextInt();
+        return armazenaNumeros.remove(leIndice);
     }
 
-    public int multiplicar(int a, int b) {
-        return a * b;
-    }
-
-    public int dividir(int a, int b) {
-        return a / b;
-    }
-
-    public static void main(String[] args) { // public: o método pode ser chamado de fora da classe.
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Digite o primeiro número: ");
-        int a = sc.nextInt();
-        System.out.println("Digite o segundo número: ");
-        int b = sc.nextInt();
-        sc.nextLine(); // limpar o enter pendente
-
-        Calculadora calculadora = new Calculadora(); // nome da variável que irá armazenar o objeto.
-        int resultado_soma = calculadora.somar(a, b);
-        int resultado_subtracao = calculadora.subtrair(a, b);
-        int resultado_multiplicacao = calculadora.multiplicar(a, b);
-        int resultado_divisao = calculadora.dividir(a, b);
-
-        while (true) {
-            System.out.println("Digite a operação: ");
-            String operacao = sc.nextLine();
-
-            if (operacao.equals("+")) {
-                System.out.println("Seguem os resultados: " + resultado_soma);
-            }
-
-            else if (operacao.equals("-")) {
-                System.out.println("Seguem os resultados: " + resultado_subtracao);
-
-            }
-
-            else if (operacao.equals("*")) {
-                System.out.println("Seguem os resultados: " + resultado_multiplicacao);
-
-            }
-
-            else if (operacao.equals("/")) {
-                System.out.println("Seguem os resultados: " + resultado_divisao);
-
-            }
-
-            else {
-                System.out.println("A aplicação será encerrada!");
-                break;
-            }
-
+    //Método que remove o número informado, caso exista na lista
+    public int removerNumero (int numero) {
+        System.out.println("Informe o número a remover: ");
+        int leNumero = sc.nextInt();
+        if (armazenaNumeros.contains(leNumero)) {
+            armazenaNumeros.remove(Integer.valueOf(leNumero));
+            return leNumero;
+        } else {
+            System.out.println("A lista não contém o número informado");
+            return -1;
         }
+        
+    }
 
-        // "\n" + a + " - " + b + " = " + resultado_subtracao +
-        // "\n" + a + " * " + b + " = " + resultado_multiplicacao +
-        // "\n" + a + " / " + b + " = " + resultado_divisao);
+    public static void main(String[] args) {
+        Calculadora calculadora = new Calculadora();
+        int soma = calculadora.somar(3,2, 5);
+        System.out.println(soma);
+        System.out.println("Lista de números completa: " + calculadora.armazenaNumeros);
 
+        int removeTopo = calculadora.removerTopo();
+        System.out.println("Número do topo removido: " + removeTopo);
+
+        int removeIndice = calculadora.removerIndice(1);
+        System.out.println("A lista agora contém os números: " + calculadora.armazenaNumeros);
+
+        int removeNumero = calculadora.removerNumero(0);
+        System.out.println("A lista agora contém os números: " + calculadora.armazenaNumeros);
     }
 
 }

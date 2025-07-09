@@ -26,3 +26,7 @@ while (True):
     elif (operacao == "x"):
         print("A aplicação será encerrada!")
         break
+
+
+# operadores lógicos: exponenciacao, modulo, resto, incremento, decremento, relacionais//e, ou, nao, bitwise (and, or, not, xor), deslocamento de bits Em python
+exp = a ^ b
