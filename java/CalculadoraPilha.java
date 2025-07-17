@@ -1,3 +1,4 @@
+
 /*Operação e Complexidade
 Acesso por índice, Inserção, Remoção no final: O(1)
 Remoção no meio/início, Busca por valor	O(n)
@@ -19,74 +20,85 @@ import java.util.Stack;
 
 public class CalculadoraPilha {
     Scanner sc = new Scanner(System.in);
-    Deque<Integer> numeros = new LinkedList<>(); 
+    private final Deque<Integer> numeros = new LinkedList<>();
 
-    public Deque<Integer> empilhar () {
+    // Método que empilha números
+    public void empilhar() {
         System.out.println("Informe próximo número da pilha ou -1 para sair!");
         int num = sc.nextInt();
-        
+
         while (num != -1) {
             numeros.push(num);
-        System.out.println("Informe próximo número da pilha ou -1 para sair!");
+            System.out.println("Informe próximo número da pilha ou -1 para sair!");
             num = sc.nextInt();
         }
-        System.out.println("Apos o empilhamento, Agora a lista contém os seguintes elementos: ");
-        return numeros;
-    }
-    //Método que remove o número do topo da lista
-    public Deque<Integer> removerTopo() {
-        int topo = numeros.pop();
-        System.out.println("Apos a remoção do topo ("+topo+"), a lista contém os seguintes elementos: ");
-        return numeros;
+        System.out.println("Apos o empilhamento, Agora a lista contém os seguintes elementos: " + numeros);
+
     }
 
-    //Método que remove o número informado, caso exista na lista
-    public Deque<Integer> removerNumero() {
+    // Método que desempilha - remove o número do topo da lista
+    public void desempilhar() {
+        if (numeros.isEmpty()) {
+            System.out.println("Pilha vazia!");
+            return;
+        }
+        int topo = numeros.pop();
+        System.out.println("Topo removido (" + topo + "). Pilha atual: " + numeros);
+    }
+
+    // Método que remove o número informado, caso exista na lista
+    public Deque<Integer> remover() {
         System.out.println("Informe o número que quer remover:");
         int numeroRemover = sc.nextInt();
-    if (numeros.contains(numeroRemover)) {
-        boolean removido = numeros.remove(Integer.valueOf(numeroRemover)); // Remove o objeto Integer
-        if (removido) {
-            System.out.println(numeroRemover + " removido com sucesso!");
+        if (numeros.contains(numeroRemover)) {
+            boolean removido = numeros.remove(Integer.valueOf(numeroRemover)); // Remove o objeto Integer
+            if (removido) {
+                System.out.println(numeroRemover + " removido com sucesso!");
+
+            } else {
+                System.out.println("Erro ao remover!");
+
+            }
 
         } else {
-            System.out.println("Erro ao remover!");
+            System.out.println("Número não encontrado na lista.");
 
         }
-
-    } else {
-        System.out.println("Número não encontrado na lista.");
-
+        System.out.println("Agora a lista contém os seguintes elementos: " + numeros);
+        return numeros;
     }
-    System.out.println("Apos a remoção de " + numeroRemover + ", Agora a lista contém os seguintes elementos: ");
-    return numeros;
-}
 
-public int somarPilha() {
-    int totalPilha = 0;
-    for (int num : numeros) {
-        totalPilha += num;
+    public int somar() {
+        int totalPilha = 0;
+        for (int num : numeros) {
+            totalPilha += num;
+        }
+        System.out.println("A soma de todos os números na pilha é: " + totalPilha);
+        return totalPilha;
     }
-    System.out.println("A soma de todos os números na pilha é: " + totalPilha);
-    return totalPilha;
-}
-   
+
+    public int consultarTopo() {
+        System.out.println("O número que está no topo é o: " + numeros.peek());
+        return numeros.peek();
+    }
+
     public static void main(String[] args) {
         CalculadoraPilha calculadora = new CalculadoraPilha();
-        
-        //Empilhar
+
+        // Empilhar
         calculadora.empilhar();
-        
-        //Somar
-        calculadora.somarPilha();
 
-       //Remover topo
-       calculadora.removerTopo();
-        
-        //Remover um número
-        calculadora.removerNumero();
+        // Somar
+        calculadora.somar();
 
+        // Remover topo
+        calculadora.desempilhar();
+
+        // Remover um número
+        calculadora.remover();
+
+        //Retorna número do topo
+        calculadora.consultarTopo();
     }
 
-    
 }
