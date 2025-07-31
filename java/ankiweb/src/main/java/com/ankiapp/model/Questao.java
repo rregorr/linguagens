@@ -8,7 +8,7 @@ import lombok.Data;
 public class Questao {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_questao;
+    private Long idQuestao;
     private String pergunta;
     private String resposta;
 }

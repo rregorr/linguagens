@@ -13,7 +13,7 @@ public class Pessoa {
 //Se não usássemos IDENTITY, teríamos que usar outro tipo de estratégia, como SEQUENCE (mais comum em Oracle/PostgreSQL) 
 // ou AUTO (delegado ao provedor JPA).🔎 No caso do SQLite, o uso correto é IDENTITY porque ele não tem suporte a SEQUENCE.
 
-    private Long id_pessoa;
-    private String nome;
+    private Long idPessoa;
+    private String nome;  
 
 }
