@@ -32,10 +32,10 @@ public class ResolucaoController {
     @PostMapping
     public Resolucao criarResolucao(@RequestBody Resolucao resolucao) {
         // Garante que pessoa e questão existem antes de salvar
-        pessoaRepository.findById(resolucao.getPessoa().getIdPessoa())
+        pessoaRepository.findById(resolucao.getPessoa().getIdPessoa().longValue())
                 .orElseThrow(() -> new RuntimeException("Pessoa não encontrada"));
 
-        questaoRepository.findById(resolucao.getQuestao().getIdQuestao())
+        questaoRepository.findById(resolucao.getQuestao().getIdQuestao().longValue())
                 .orElseThrow(() -> new RuntimeException("Questão não encontrada"));
 
         return resolucaoRepository.save(resolucao);
