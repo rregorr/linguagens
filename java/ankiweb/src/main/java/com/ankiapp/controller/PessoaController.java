@@ -1,3 +1,4 @@
+//GPT do Projeto: https://chatgpt.com/c/6888af36-4754-8332-95df-76d8971e3fdc
 package com.ankiapp.controller;
 
 import com.ankiapp.model.Pessoa;
@@ -7,18 +8,22 @@ import org.springframework.web.bind.annotation.*; //Importa todas as anotações
 
 import java.util.List;
 
-@RestController //Informa ao Spring que essa classe é um controlador REST (retorna JSON diretamente).
-@RequestMapping("/pessoas") // Define a URL base para todos os endpoints deste controller: http://localhost:8080/pessoas
+@RestController // Informa ao Spring que essa classe é um controlador REST (retorna JSON
+                // diretamente).
+@RequestMapping("/pessoas") // Define a URL base para todos os endpoints deste controller:
+                            // http://localhost:8080/pessoas
 public class PessoaController {
 
-    @Autowired //Injeção automática do repositório PessoaRepository pelo Spring.
-    private PessoaRepository pessoaRepository; // Repositório usado para interagir com o banco de dados (CRUD de Pessoa).
+    @Autowired // Injeção automática do repositório PessoaRepository pelo Spring.
+    private PessoaRepository pessoaRepository; // Repositório usado para interagir com o banco de dados (CRUD de
+                                               // Pessoa).
 
     @PostMapping // Mapeia requisições HTTP POST para este método.
     public Pessoa criarPessoa(@RequestBody Pessoa pessoa) {
-        return pessoaRepository.save(pessoa); // Salva a nova pessoa recebida no corpo da requisição e retorna o objeto salvo.
+        return pessoaRepository.save(pessoa); // Salva a nova pessoa recebida no corpo da requisição e retorna o objeto
+                                              // salvo.
     }
-    
+
     // Listar todas as pessoas
     @GetMapping // Mapeia requisições HTTP GET sem parâmetros (lista tudo).
     public List<Pessoa> listarPessoas() {
@@ -31,17 +36,17 @@ public class PessoaController {
         return pessoaRepository.findById(id).orElse(null); // Busca por ID. Se não encontrar, retorna null.
     }
 
-
     // Atualizar pessoa
     @PutMapping("/{id}") // Mapeia requisições HTTP PUT para a URL /pessoas/{id}
     public Pessoa atualizarPessoa(@PathVariable Long id, @RequestBody Pessoa pessoaAtualizada) {
         // Busca a pessoa no banco pelo ID informado
         return pessoaRepository.findById(id).map(pessoa -> {
-        // Atualiza o nome da pessoa encontrada com o valor enviado no corpo da requisição
+            // Atualiza o nome da pessoa encontrada com o valor enviado no corpo da
+            // requisição
             pessoa.setNome(pessoaAtualizada.getNome());
-        // Salva e retorna a pessoa atualizada
+            // Salva e retorna a pessoa atualizada
             return pessoaRepository.save(pessoa);
-        }).orElse(null);  // Caso não encontre a pessoa, retorna null
+        }).orElse(null); // Caso não encontre a pessoa, retorna null
     }
 
     // Deletar pessoa
@@ -51,4 +56,3 @@ public class PessoaController {
         pessoaRepository.deleteById(id);
     }
 }
-

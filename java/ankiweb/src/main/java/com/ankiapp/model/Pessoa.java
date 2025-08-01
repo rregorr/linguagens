@@ -1,3 +1,4 @@
+//GPT do Projeto: https://chatgpt.com/c/6888af36-4754-8332-95df-76d8971e3fdc
 package com.ankiapp.model;
 
 import java.lang.annotation.Inherited;
