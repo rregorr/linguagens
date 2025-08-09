@@ -1,0 +1,10 @@
+{
+  "java.configuration.runtimes": [
+    {
+      "name": "JavaSE-21",
+      "path": "C:\\Program Files\\jdk-22",  // ajuste se necessário
+      "default": true
+    }
+  ],
+  "java.configuration.javaVersion": "22"
+}

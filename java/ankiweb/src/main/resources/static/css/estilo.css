@@ -1,0 +1,36 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 2rem;
+    background-color: #f9f9f9;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+form {
+    margin-top: 1rem;
+}
+
+input {
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background-color: #2d89ef;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1b5fad;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
