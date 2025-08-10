@@ -20,7 +20,7 @@ function taxaJurosEfetiva (N, i, t) {
 let taxaEfetiva = taxaJurosEfetiva(1000, 0.01, 12);
 console.log(`\nTaxa de Juros Efetiva: ${taxaEfetiva.toFixed(4)}`);  
 
-function conversaoRealAparente(Ia, Inf) {
+function conversaoAparenteReal(Ia, Inf) {
     /*
     Ia: Taxa de juros aparente
     Iinf: Taxa de inflação
@@ -30,5 +30,17 @@ function conversaoRealAparente(Ia, Inf) {
     let Ir = ((Ia - Inf) / (1 + Inf));
     return Ir;
 }
-console.log("\nTaxa de Juros Real: " + conversaoRealAparente(0.8, 0.2));    
+console.log("\nTaxa de Juros Real: " + conversaoAparenteReal(0.8, 0.2));    
 
+function conversaoRealAparente (Ir, Inf) {
+    let Ia = 2 + Ir + Inf + (Ir * Inf);
+    return Ia;  
+}
+console.log("\nTaxa de Juros Aparente: " + conversaoRealAparente(0.8, 0.2));
+
+function taxaEfetiva2 (i_nominal, n) {
+    //let i_efetiva = (1 + i_nominal / n)**n - 1;
+    (1 + In)**t == (1 + Ie)**t;
+    return In;
+}
+console.log("\nTaxa de Juros Efetiva: " + taxaEfetiva2(0.2, 12).toFixed(2));
